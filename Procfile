@@ -1,0 +1,1 @@
+web: gunicorn nomiapp:app --log-file -
