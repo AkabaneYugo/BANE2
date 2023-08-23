@@ -1,0 +1,91 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/***カーテンのように開くアニメーション***/
+body::before, body::after{
+    content: "";
+    position: fixed; /*固定表示*/
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background: #a79477; /*劇のカーテン色*/
+    animation: curtainOpen 3s forwards;
+    animation-delay: 0.1s; /*遅延時間*/
+    z-index: 999; /*最前面に*/
+}
+body::before{
+left: 0; /*左に開く*/
+}
+body::after{
+right: 0; /*右に開く*/
+}
+
+@keyframes curtainOpen{
+0%{
+    width: 50%; /*閉じている状態*/
+}
+100%{ 
+    width: 0; /*開く*/
+    visibility: hidden; /*非表示に*/
+}
+}
+
+
+
+
+body {
+    font-family: serif;
+    }
+*{
+    font-family: serif;
+}
+
+
+
+.info {
+    position: absolute;
+    top: 17vh; /* 画像の上部からの距離 */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.face {
+    margin-right: 1vh; /* 顔画像と名前の間隔を設定 */
+}
+
+.names h1 {
+    margin: 0;
+    font-size: 5vw;
+    line-height: 1.2;
+    text-align: left; /* 左寄せ */
+}
+
+/* favoriteとitemのスタイル */
+.favorite{
+    position: absolute;
+    top: 28vh; /* 画像の上部からの距離 */
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: left; /* 要素を中央揃え */
+    text-align: left; /* 左寄せ */
+}
+
+
+.item {
+    position: absolute;
+    top: 65vh; /* 画像の上部からの距離 */
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 要素を中央揃え */
+    text-align: center;
+}
+
+h1{
+    font-size: 5vw; /* 4% of viewport width */
+}
+

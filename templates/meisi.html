@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='meisi.css') }}">
+    <title>Top</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background-color: #a79477; /* 余白の背景色 */
+            background-image: url("{{ url_for('static', filename='toptop.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            height: 100vh; /* ビューポートの高さいっぱいに背景を表示 */
+            margin: 0; /* マージンをゼロに設定 */
+            padding: 0; /* パディングをゼロに設定 */
+            width: 100%;
+        }
+        .container {
+            position: absolute; /* 親要素に相対位置を設定 */
+            top: 42vh; /* 40% of viewport height */
+            transform: translateY(-50%); /* コンテナの中央位置調整 */
+            text-align: center; /* 文字位置   */
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: center;
+            width: 100%;
+        }
+        .image, {
+            text-align: center;
+            margin-top: 15px; /* 間隔の調整 */
+        }
+        /* 他のスタイルルールもここに追加することができます */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="kmeisi" method="POST" enctype="multipart/form-data">
+            <div>
+                <h2>
+                    <label for="name">本名：</label>
+                    <input type="text" id="name" name="name" placeholder="本名">	
+                </h2>
+            </div>
+            <div>
+                <h2>
+                    <label for="nick">あだ名：</label>
+                    <input type="text" id="nick" name="nick" placeholder="あだ名">	
+                    <br>
+                    <br>
+                </h2>
+            </div>
+            <div> 
+                <h2>
+                <p>お酒への耐性は？</p>
+                <input type="radio" name="strong" value="高い"> 高い
+                <input type="radio" name="strong" value="普通" checked> 普通
+                <input type="radio" name="strong" value="低い"> 低い
+                <br>
+                <br>
+                </h2>
+            </div>
+            <div>
+                <h2>
+                    <p>好きなお酒は？（2個まで）</p>
+                    <input type="text" id="like" name="like" placeholder="お酒">	
+                    <p>嫌いなお酒は？（2個まで）</p>
+                    <input type="text" id="hate" name="hate" placeholder="お酒">
+                    <br>
+                    <br>	
+                </h2>
+            </div>
+            <div>
+                <h2>
+                    <p>あなたのお写真（横長推奨）</p>
+                    <input type="file"  id="shasin" name="shasin">
+                    <br>
+                </h2>
+            </div>
+            <div>
+                <input type="submit" value="送信" class="button">
+            </div>
+            <div>
+                　　　
+            </div>
+            <div>
+                <a href="/"><img src="{{ url_for('static', filename='back.png') }}" width="40%" height="40%"></a>
+            </div>
+        </form>
+    </div>
+
+</body>

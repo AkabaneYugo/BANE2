@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='second.css') }}">
+    <title>Next Drink</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background-color: #a79477; /* 余白の背景色 */
+            background-image: url("{{ url_for('static', filename='top.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            height: 100vh; /* ビューポートの高さいっぱいに背景を表示 */
+            margin: 0; /* マージンをゼロに設定 */
+            padding: 0; /* パディングをゼロに設定 */
+            width: 100%;
+        }
+        .container {
+            position: absolute; 
+            top: 20vh; /* 40% of viewport height */
+            leht:50%;
+            transform: translateY(-50%); /* コンテナの中央位置調整 */
+            text-align: center; /* 文字位置   */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .image,
+        .item {
+            text-align: center;
+            margin-top: 15px; /* 間隔の調整 */
+        }
+        /* 他のスタイルルールもここに追加することができます */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>次におすすめの飲み物は、、<br></h1>
+        <h1 class="drink">「{{next_selected_drink}}」</h1>
+    </div>
+    <div class="image">
+        {%if ans == 1 %}
+            <h1><p>序章も序章よ</p></h1>
+            <img src="{{ url_for('static', filename='gun1.png') }}" >
+        {%elif ans == 2 %}
+            <h1><p>酒持ってこーーいっ</p></h1>
+            <img src="{{ url_for('static', filename='gun2.png') }}" >
+        {%elif ans == 3 %}
+            <h1><p>ここからが戦い</p></h1>
+            <img src="{{ url_for('static', filename='gun3.png') }}" >
+        {%elif ans == 4 %}
+            <h1><p>楽しくなってきたぜっ</p></h1>
+            <img src="{{ url_for('static', filename='gun4.png') }}" >
+        {%elif ans == 5 %}
+            <h1><p>ん、なんか雲行きが、、</p></h1>
+            <img src="{{ url_for('static', filename='gun5.png') }}" >
+        {%elif ans == 6 %}
+            <h1><p>あ、ちょ、もう無理</p></h1>
+            <img src="{{ url_for('static', filename='gun6.png') }}" >
+        {% endif %}
+    </div>
+    <div class="item">
+        <a href="/next_drink?drink_name={{ next_selected_drink }}&goal={{ goal }}&now={{ now }}&pace={{ pace }}&sweet={{ sweet }}&bitter={{ bitter }}&scent={{ scent }}&acid={{ acid }}&plain={{ plain }}&fruity={{ fruity }}&spark={{ spark }}&times={{ times }}">
+            <img src="{{ url_for('static', filename='sonota.png') }}" width="75%" height="75%">
+        </a>
+        <a href="/top"><img src="{{ url_for('static', filename='back.png') }}" width="75%" height="75%"></a>
+        <a href="/"><img src="{{ url_for('static', filename='topitem.png') }}" width="75%" height="75%"></a>
+    </div>
+</body>
+</html>

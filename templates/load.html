@@ -1,0 +1,18 @@
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='load.css') }}">
+    <title>Top</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div id="loading-wrapper">
+        <div id="loading-text">AI稼働中</div>
+        <div id="loading-content"></div>
+    </div>
+    <a href="/nrec?x={{ x }}">　</a>
+    <script>
+        // ページ遷移後にリンクをクリック
+        document.querySelector('a').click();
+    </script>
+</body>

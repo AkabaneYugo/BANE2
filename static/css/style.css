@@ -1,0 +1,17 @@
+body
+{background-image: url("https://cdn.pixabay.com/photo/2021/02/05/07/35/winter-5983671_1280.jpg");
+background-size: cover;
+color: DarkBlue;}
+h1
+{color: mediumblue;
+padding: 0px;
+min-height: 50px;
+background-image: url("https://cdn.pixabay.com/photo/2017/11/02/12/26/fire-2911041_1280.jpg");
+background-size:cover;}
+big{color:red}
+i{color:coral}
+p{margin-left:200px;}
+h3{margin-left:200px;}
+p{color:black;}
+#profile  {border-style: dashed;}
+#Question {background-color:lightgray;}

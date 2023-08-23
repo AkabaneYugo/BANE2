@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>Index</title>
+    <meta charset="utf-8"/>
+</head>
+
+<body>
+	<h3>{{title1}}</h3>
+	<p>{{message1}}</p>
+	<form action="/upload" method="POST" enctype="multipart/form-data">
+		<div>
+            <p>今日の飲み会で何%まで酔いたいですか？</p>
+			<label for="goal">Goal：</label>
+            <select name="goal" id="goal" goal="goal">
+                <option value=“100%”>100%</option>
+                <option value=“90%”>90%</option>
+                <option value=“80%”>80%</option>
+                <option value=“70%”>70%</option>
+                <option value=“60%”>60%</option>
+                <option value=“50%”>50%</option>
+                <option value=“40%”>40%</option>
+                <option value=“30%”>30%</option>
+                <option value=“20%”>20%</option>
+                <option value=“10%”>10%</option>
+                <option value=“0%”>0%</option>
+            </select>
+            <p>今何%酔っていますか？</p>
+            <label for="now">Now：</label>
+            <select name="now" id="now" now="now">
+                <option value=“100%”>100%</option>
+                <option value=“90%”>90%</option>
+                <option value=“80%”>80%</option>
+                <option value=“70%”>70%</option>
+                <option value=“60%”>60%</option>
+                <option value=“50%”>50%</option>
+                <option value=“40%”>40%</option>
+                <option value=“30%”>30%</option>
+                <option value=“20%”>20%</option>
+                <option value=“10%”>10%</option>
+                <option value=“0%”>0%</option>
+            </select>
+            <p>どのくらいのペースで酔いたいですか？</p>
+            <select pace="pace" id="pace" pace="pace">
+                <option value=“100%”>100%</option>
+                <option value=“90%”>90%</option>
+                <option value=“80%”>80%</option>
+
+            </select>
+		</div>
+		<div>
+			<input type="submit" value="送信">
+		</div>
+	</form>
+</body>
+

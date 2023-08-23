@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='top.css') }}">
+    <title>Top</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background-color: #a79477; /* 余白の背景色 */
+            background-image: url("{{ url_for('static', filename='toptop.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            height: 100vh; /* ビューポートの高さいっぱいに背景を表示 */
+            margin: 0; /* マージンをゼロに設定 */
+            padding: 0; /* パディングをゼロに設定 */
+            width: 100%;
+        }
+        .container {
+            position: absolute; /* 親要素に相対位置を設定 */
+            top: 44vh; /* 40% of viewport height */
+            transform: translateY(-50%); /* コンテナの中央位置調整 */
+            text-align: center; /* 文字位置   */
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: center;
+            width: 100%;
+        }
+        /* 他のスタイルルールもここに追加することができます */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/second" method="POST" enctype="multipart/form-data">
+<!--  
+            <div> 
+                <h2>
+                <u>生物学上の性別</u>：
+                <input type="radio" name="sex" value="男"> 男性
+                <input type="radio" name="sex" value="女" checked> 女性<br>
+                <u><label for="age">あなたの世代</label></u>：　　
+                <select name="age" id="age" >
+                    <option value=20>20代</option>
+                    <option value=30>30代</option>
+                    <option value=40>40代</option>
+                    <option value=50>50代</option>
+                    <option value=60>60代以上</option>
+                </select>
+                </h2>
+            </div>
+-->
+            <div>
+                <h1>
+                    <u><b>飲みベーションを教えてください</b></u>
+                </h1>
+                <h2>
+                <label for="goal">目標：</label>
+                しらふ <input type="range" name="goal"/> 限界<br>
+                <label for="now">現状：</label>
+                しらふ <input type="range" name="now" /> 限界
+                </h2>
+            </div>
+            <br>
+            <div> 
+                <h1>
+                    <u><b>どのくらいのペースで酔いたいですか</b></u>
+                </h1>
+                <h2>
+                <input type="radio" name="pace" value="早く"> 早く
+                <input type="radio" name="pace" value="普通に" checked> 普通に
+                <input type="radio" name="pace" value="ゆっくり"> ゆっくり
+                </h2>
+            </div>
+            <br>
+            <div>
+                <h1>
+                    <u><b><label for="favo">お酒の好みを教えてください</label></b></u>
+                </h1>
+                <h2>
+                甘くない　　 <input type="range" name="sweet" min="0" max="100"> 甘い　　　<br>
+                苦くない　　 <input type="range" name="bitter" min="0" max="100"> 苦い　　　<br>
+                臭くない　　 <input type="range" name="scent" min="0" max="100"> くさみあり<br>
+                酸っぱくない <input type="range" name="acid" min="0" max="100"> 酸っぱい　<br>
+                ガツンと　　 <input type="range" name="plain" min="0" max="100"> さっぱり　<br>
+                果実感なし　 <input type="range" name="fruity" min="0" max="100"> フルーティ<br>
+                炭酸なし　　 <input type="range" name="spark" min="0" max="100"> 炭酸あり　<br>
+                </h2>
+            </div>
+            <br>
+            <div>
+                <br>
+                <input type="submit" value="送信" class="button">
+            </div>
+            <a href="/"><img src="{{ url_for('static', filename='back.png') }}" width="40%" height="40%"></a>
+        </form>
+    </div>
+</body>
+
+
+
+

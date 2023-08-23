@@ -1,0 +1,100 @@
+
+
+/***カーテンのように開くアニメーション***/
+body::before, body::after{
+    content: "";
+    position: fixed; /*固定表示*/
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background: #a79477; /*劇のカーテン色*/
+    animation: curtainOpen 3s forwards;
+    animation-delay: 0.1s; /*遅延時間*/
+    z-index: 999; /*最前面に*/
+}
+body::before{
+left: 0; /*左に開く*/
+}
+body::after{
+right: 0; /*右に開く*/
+}
+
+@keyframes curtainOpen{
+0%{
+    width: 50%; /*閉じている状態*/
+}
+100%{ 
+    width: 0; /*開く*/
+    visibility: hidden; /*非表示に*/
+}
+}
+
+/***サンプル装飾用***/
+body{
+padding: 1rem;
+}
+
+body {
+    font-family: serif;
+    }
+*{
+    font-family: serif;
+}
+
+
+
+/* 画像の上部に要素を配置するための親コンテナ */
+.image-container {
+    position: relative;
+    text-align: center;
+}
+
+/* リンクを配置する要素 */
+.container {
+    display: inline;
+    width: 28%;
+    position: absolute;
+    top: 20%; /* 画像の上部からの距離 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+}
+
+
+.image{
+    position: absolute;
+    top: 50%; /* 画像の上部からの距離 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: poyoyon3 4s infinite; /* アニメーションの時間を長めに設定 */
+    opacity: 1;
+}
+
+@keyframes poyoyon3 {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1.05); /* 少し拡大 */
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(0.95); /* 少し縮小 */
+    }
+}
+
+
+.item {
+    position: absolute;
+    top: 85%; /* 画像の上部からの距離 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+

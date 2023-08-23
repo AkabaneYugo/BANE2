@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='start.css') }}">
+    <title>Top</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background-color: #a79477; /* 余白の背景色 */
+            background-image: url("{{ url_for('static', filename='start.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            height: 100vh; /* ビューポートの高さいっぱいに背景を表示 */
+            margin: 0; /* マージンをゼロに設定 */
+            padding: 0; /* パディングをゼロに設定 */
+            width: 100%;
+        }
+        .link-container {
+            position: absolute; /* 親要素に相対位置を設定 */
+            top: 60vh; /* 40% of viewport height */
+            transform: translateY(-50%); /* コンテナの中央位置調整 */
+            text-align: center; /* 文字位置   */
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: center;
+            width: 100%;
+        }
+        /* 他のスタイルルールもここに追加することができます */
+    </style>
+</head>
+
+<body>
+    <div class="shutter"><h1 class="title">酔推-suisui-</h1></div>
+        <div class="link-container">
+            <div>
+                <h2><a href="/top"><img src="{{ url_for('static', filename='onomimono.png') }}" width="60%" height="60%"></a></h2>
+                <h2><a href="/nihon"><img src="{{ url_for('static', filename='nihon.png') }}" width="60%" height="60%"></a></h2>
+                <h2><a href="/meisi"><img src="{{ url_for('static', filename='osakemeisi.png') }}" width="60%" height="60%"></a></h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='kmeisi.css') }}">
+    <title>Top</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background-color: #a79477; /* 余白の背景色 */
+            background-image: url("{{ url_for('static', filename='kmeisi.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            height: 100vh; /* ビューポートの高さいっぱいに背景を表示 */
+            margin: 0; /* マージンをゼロに設定 */
+            padding: 0; /* パディングをゼロに設定 */
+            width: 100%;
+        }
+        /* 他のスタイルルールもここに追加することができます */
+    </style>
+</head>
+
+<body>
+    <div class="info">
+        <div>
+            　
+        </div>
+        <div class="face">
+            <img src="{{filebinary}}" style="margin: 1Cvw; vertical-align: bottom; height: 25vw;">
+        </div>
+        <div class="names">
+            <h1>
+                {{name}}<br>
+                （{{nick}}）<br>
+                酒耐性は「{{strong}}」です
+            </h1>
+        </div>
+    </div>
+    <div class="favorite">
+        <h1 class="favorite1">
+            　好きなお酒：<br>
+        </h1>
+        <h1 class="favorite2">
+            　{{like}}<br>
+        </h1>
+        <h1 class="favorite3">
+            　嫌いなお酒：<br>
+        </h1>
+        <h1 class="favorite4">
+            　{{hate}}
+        </h1>
+    </div>
+    <div class="item">
+        <a href="/meisi"><img src="{{ url_for('static', filename='back.png') }}" width="45%" height="45%"></a>
+        <a href="/"><img src="{{ url_for('static', filename='topitem.png') }}" width="45%" height="45%"></a>
+    </div>
+</body>
+
+</html>

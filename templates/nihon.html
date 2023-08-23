@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='nihon.css') }}">
+    <title>Top</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background-color: #a79477; /* 余白の背景色 */
+            background-image: url("{{ url_for('static', filename='toptop.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            height: 100vh; /* ビューポートの高さいっぱいに背景を表示 */
+            margin: 0; /* マージンをゼロに設定 */
+            padding: 0; /* パディングをゼロに設定 */
+            width: 100%;
+        }
+        .container {
+            position: absolute; /* 親要素に相対位置を設定 */
+            top: 41vh; /* 40% of viewport height */
+            transform: translateY(-50%); /* コンテナの中央位置調整 */
+            text-align: center; /* 文字位置   */
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: center;
+            width: 100%;
+        }
+        .image, {
+            text-align: center;
+            margin-top: 15px; /* 間隔の調整 */
+        }
+        /* 他のスタイルルールもここに追加することができます */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/load" method="POST" enctype="multipart/form-data">
+            <div>
+                <h1>
+                    <br><br>
+                    <u><b>気に入った日本酒の名前</b></u><br>
+                <p>日本酒名：<input type="text" name="x"></p>
+                </h1>
+            </div>
+            <div class="image">
+                <br>
+                <img src="{{ url_for('static', filename='love.png') }}" width="55%" height="55%" >
+                <br><br>
+            <div>
+                <input type="submit" value="送信" class="button">
+            </div>
+            <a href="/"><img src="{{ url_for('static', filename='back.png') }}" width="45%" height="45%"></a>
+        </form>
+    </div>
+</body>

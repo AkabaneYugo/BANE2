@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='nrec.css') }}">
+    <title>Next Drink</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            background-color: #a79477; /* 余白の背景色 */
+            background-image: url("{{ url_for('static', filename='top.png') }}");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center top;
+            height: 100vh; /* ビューポートの高さいっぱいに背景を表示 */
+            margin: 0; /* マージンをゼロに設定 */
+            padding: 0; /* パディングをゼロに設定 */
+            width: 100%;
+        }
+        .container {
+            position: absolute; 
+            top: 15vh; /* 40% of viewport height */
+            leht:50%;
+            transform: translateY(-50%); /* コンテナの中央位置調整 */
+            text-align: center; /* 文字位置   */
+            border-radius: 10px;
+            padding: 4px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .image,
+        .item {
+            text-align: center;
+            margin-top: 5px; /* 間隔の調整 */
+        }
+        /* 他のスタイルルールもここに追加することができます */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <font size="5">「{{next_nyuryoku}}」と似ているのは</font><br>
+        <font size="12" class=drink>「{{next_selected_nihonshu}}」</font><br>
+        <font size="4">このお酒にはこんなイメージがあるよ<br>{{next_key}}<br></font>
+    </div>
+    <div class="image">
+        <img src="{{ url_for('static', filename='otyoko.png') }}">
+    </div>
+    <div class="item">
+        <a href="/load2?nihonshu_name={{ next_selected_nihonshu }}&x={{ x }}&times={{ times }}">
+            <img src="{{ url_for('static', filename='sonota.png') }}" width="75%" height="75%">
+        </a>
+        <a href="/nihon"><img src="{{ url_for('static', filename='back.png') }}" width="75%" height="75%"></a>
+        <a href="/"><img src="{{ url_for('static', filename='topitem.png') }}" width="75%" height="75%"></a>
+    </div>
+</body>
+</html>

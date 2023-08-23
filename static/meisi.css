@@ -1,0 +1,62 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/***カーテンのように開くアニメーション***/
+body::before, body::after{
+    content: "";
+    position: fixed; /*固定表示*/
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    background: #a79477; /*劇のカーテン色*/
+    animation: curtainOpen 3s forwards;
+    animation-delay: 0.1s; /*遅延時間*/
+    z-index: 999; /*最前面に*/
+}
+body::before{
+left: 0; /*左に開く*/
+}
+body::after{
+right: 0; /*右に開く*/
+}
+
+@keyframes curtainOpen{
+0%{
+    width: 50%; /*閉じている状態*/
+}
+100%{ 
+    width: 0; /*開く*/
+    visibility: hidden; /*非表示に*/
+}
+}
+
+
+
+
+body {
+    font-family: serif;
+    }
+*{
+    font-family: serif;
+}
+
+
+
+
+.button {
+    display       : inline-block;
+    font-size     : 9vw;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 28px 90px;   /* 余白       */
+    background    : rgba(255, 255, 255, 0);     /* 背景色     */
+    color         : #1f1e1e;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    border        : 5px solid rgba(255, 255, 255, 0);    /* 枠の指定 */
+    font-weight: bold;
+}
