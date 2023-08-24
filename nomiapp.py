@@ -35,7 +35,7 @@ def meisi():
 def nrec():
     x = request.args.get("x")
 
-    store_cross_detail = pd.read_csv("store_cross_detail_retu2.csv")
+    store_cross_detail = pd.read_csv("to_csv_out.csv")
 
     store_cross_detail = store_cross_detail.sort_values(
         ["id_x", "avg_cos_sim_rate"], ascending=[True, False]
@@ -68,7 +68,7 @@ def next_nihonshu():
     x = request.args.get("x")
     times = request.args.get("times")
 
-    store_cross_detail = pd.read_csv("store_cross_detail_retu2.csv")
+    store_cross_detail = pd.read_csv("to_csv_out.csv")
 
     store_cross_detail = store_cross_detail.sort_values(
         ["id_x", "avg_cos_sim_rate"], ascending=[True, False]
